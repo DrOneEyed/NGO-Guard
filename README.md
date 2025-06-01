@@ -1,5 +1,5 @@
 # NGO-Guard
-We are a team which is passionate about resolving social issues through our programming endeavours. Our newest project takes in account for monitoring all the fradulent NGOs used for money laundering, utilising funds donated for a social cause. Our project, NGOGuard utilises various data points to rate various NGOs for legitimacy.
+Resolving social issues through our programming endeavors. This project takes in account for monitoring all the fraudulent NGOs used for money laundering, utilizing funds donated for a social cause. NGOGuard utilizes various data points to rate various NGOs for legitimacy.
 
 ## Installation
 Instal PHP 8.0.19 or above
