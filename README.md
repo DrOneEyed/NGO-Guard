@@ -1,26 +1,57 @@
-# NGO-Guard
-Resolving social issues through our programming endeavors. This project takes in account for monitoring all the fraudulent NGOs used for money laundering, utilizing funds donated for a social cause. NGOGuard utilizes various data points to rate various NGOs for legitimacy.
+# NGO Guard — NGO Legitimacy Monitoring System
 
-## Installation
-Instal PHP 8.0.19 or above
-Instal XAMPP Control Panel V.3.3.0 or above
+A data-driven web platform that rates and monitors Non-Governmental Organisations (NGOs) for legitimacy, helping donors identify fraudulent organisations used for money laundering or misappropriation of charitable funds.
 
-## Usage
-If using VS code install extensions PHP intelephense and PHP server
-Otherwise add the downloaded folder to your XAMPP installation folder
+## Problem Statement
 
-Then Run XAMPP and turn on Apache and MySQL
-![image](https://user-images.githubusercontent.com/51701562/230728629-c0636b2d-91ad-4e12-bcf6-000807a8a442.png)
+Thousands of registered NGOs misuse donor funds for money laundering or personal enrichment. NGO Guard provides a transparent, ML-powered scoring system to help donors and regulatory bodies assess NGO credibility before contributing.
 
-Then open the phpmyadmin portal
-Add new Database named "ngo guard"
-Then Click Go
-After That click on ngo guard on the left hand side tab
-Then Go To import tab and import the files named NGO_Details.sql and TXN_Details.sql in respective order
-(It should look like this)
-![image](https://user-images.githubusercontent.com/51701562/230728854-22cb837e-c33f-4fad-af6c-419c08f75e66.png)
+## Features
 
-Now you can run the by going to vs code -> opening the main.php file and then right clicking the code and selecting Serve project
-![image](https://user-images.githubusercontent.com/51701562/230729012-0dba7931-8742-4046-89f3-a6b53f1f8ea9.png)
+- **Legitimacy Score** — Machine learning model (PHP-ML) generates a composite credibility rating per NGO
+- **Fund Tracking** — Monitors total funds received vs. utilised by each NGO
+- **Transaction Analysis** — Detailed transaction history with anomaly indicators
+- **NGO Directory** — Searchable database of registered NGOs with profile pages
+- **Training Pipeline** — Retrainable scoring model (`ngo_score_train.php`)
 
-Other wise you can add the downloaded folder to XAMPP directory and open through that
+## Tech Stack
+
+![PHP](https://img.shields.io/badge/PHP-7.x-777BB4?logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![PHP-ML](https://img.shields.io/badge/PHP--ML-Machine%20Learning-blue)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+
+## Project Structure
+
+```
+├── main.php            # Dashboard and entry point
+├── ngo_det.php         # NGO detail profile
+├── ngo_rate.php        # Rating display
+├── ngo_score.php       # Score computation and display
+├── ngo_score_train.php # Model training pipeline
+├── tot_fund.php        # Total fund analysis
+├── trans_det.php       # Transaction detail view
+├── database_conn.php   # DB configuration
+├── NGO_Details.sql     # NGO master data schema
+├── TXN_Details.sql     # Transaction data schema
+└── phpml/              # PHP Machine Learning library
+```
+
+## Getting Started
+
+```bash
+git clone https://github.com/DrOneEyed/NGO-Guard.git
+cd NGO-Guard
+```
+
+1. Import `NGO_Details.sql` and `TXN_Details.sql` into MySQL
+2. Update credentials in `database_conn.php`
+3. Run with Apache/XAMPP or PHP built-in:
+
+```bash
+php -S localhost:8000 main.php
+```
+
+## License
+
+MIT
